@@ -5,6 +5,19 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+    --primary-color: #5967fe;
+    --secondary-color: linear-gradient(40deg, #5967fe, #ffffff);
+    --secondary-color-hover:linear-gradient(294deg, #5967fe, #ffffff);
+    --text-color1: #333;
+    --text-color2: #ffffff;
+    --subtext-color: #777;
+    --color-navbar:#f0edff;
+    --gradient-color: linear-gradient(43deg,#d2d2f2, #73a1fe, #eaf7ff);
+    --gradient-color-hover: linear-gradient(43deg,#e1e1ff, #6f79ff, #eafff6);
+    --gradient-color2: linear-gradient(294deg,#c4c8ff, #d4e9ff, #c4c8ff); 
+}
+
 /* Body */
 body {
     background-color: #ffffff;
@@ -17,7 +30,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 15px 72px;
-    background-color: white;
+    background-color:var(--text-color2);
     position: relative;
 }
 
@@ -39,7 +52,7 @@ body {
     height: 58px;
     align-items: center;
     gap: 15px;
-    background-color: #f0edff;
+    background-color: var(--color-navbar);
     padding: 0px 20px;
     border-radius: 32px;
     margin-right: 5%;
@@ -55,7 +68,7 @@ body {
 }
 
 .menu a:hover {
-    background-color: white;
+    background-color: var(--text-color2);
     border-radius: 40px;
 }
 
@@ -66,48 +79,44 @@ body {
     gap: 15px;
 }
 
-
-/* Nút đăng nhập */
 .btn-login {
     font-weight: 600;  
     height: 48px;
     width: 140px;
-    color: white;
+    color: var(--text-color2);
     padding: 8px 16px;
     border-radius: 24px;
     font-size: 14px;
-    background: linear-gradient(40deg, #5967fe, #ffffff);
+    background: var(--secondary-color);
     border: none;
     outline: none;
     transition: 1s;
 }
 
 .btn-login:hover {
-    background: linear-gradient(294deg, #5967fe, #ffffff);
-    color: white;
+    background: var(--secondary-color-hover);
+    color: var(--text-color2);
 }
 
-/* Nút đăng ký */
 .btn-register {
     font-weight: 600;  
     height: 48px;
     width: 140px;
-    color: #5967fe;
+    color: var(--primary-color);
     padding: 8px 16px;
     border-radius: 24px;
     font-size: 14px;
-    border: 2px solid #5967fe;
-    background: white;
+    border: 2px solid var(--primary-color);
+    background: var(--text-color2);
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn-register:hover {
-    background: #5967fe;
-    color: white;
+    background: var(--primary-color);
+    color: var(--text-color2);
 }
 
-/* Nút menu toggle */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -129,7 +138,7 @@ body {
         top: 60px;
         left: 0;
         width: 100%;
-        background: #8000ff;
+        background: var(--primary-color);
         padding: 10px 0;
     }
 
@@ -138,15 +147,15 @@ body {
     }
 
     .menu a {
-        color: white;
+        color: var(--text-color2);
         padding: 15px;
         text-align: center;
         display: block;
     }
 
     .menu a:hover {
-        background: white;
-        color: #8000ff;
+        background: var(--text-color2);
+        color: var(--primary-color);
     }
 
     .buttons {
@@ -164,30 +173,32 @@ body {
     }
 }
 
+/* HOME */
 /* Banner */
-.grid-container1 {
+.grid-container1-home{
     padding: 100px 104px;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột bằng nhau */
-    gap: 20px; /* Tạo khoảng cách giữa các cột */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
 }
 
-.content {
+.grid-container1-home .content {
     margin-top: 48px;
     width: 99%;
     flex-direction: column;
-    padding: 50px;
+    padding: 50px 88px 50px 0;
 }
 
 
 .content h1 {
     font-size: 48px;
     margin: 12px 0;
+    font-weight: bold;
 }
 
 .content p {
     font-size: 20px;
-    color: #777;
+    color: var(--subtext-color);
     margin-top: 5px;
     margin: 20px 0;
 }
@@ -197,16 +208,20 @@ body {
     height: 58px;
     font-size: 20px;
     font-weight: 300;
-    background: linear-gradient(43deg,#d2d2f2, #73a1fe, #eaf7ff);
+    background: var(--gradient-color);
     border-radius: 48px;
     border: none;
     outline: none;
-    color: white;
+    color: var(--text-color2);
     margin-top: 5%;
 }
 
+.content .btn-register2:hover {
+    background: var(--gradient-color-hover);
+}
+
 .highlight {
-    color:#5967fe ;
+    color:var(--primary-color) ;
 }
 
 .image-container {
@@ -232,8 +247,8 @@ body {
 
 .stat-box {
     height: 140px;
-    background: linear-gradient(294deg,#c4c8ff, #d4e9ff, #c4c8ff); /* Hiệu ứng gradient */
-    border-radius: 16px; /* Bo góc */
+    background: var(--gradient-color2);
+    border-radius: 16px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -243,11 +258,326 @@ body {
 
 .stat-number {
     font-size: 48px;
-    color: #333;
+    color: var(--text-color1);
 }
 
 .stat-label {
     font-size: 20px;
-    color: #777;
+    color: var(--subtext-color);
     margin-top: 5px;
 }
+
+
+.container2-home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 100px 104px;
+    gap: 50px;
+}
+
+/* Phần bên trái */
+.left-content {
+    flex: 1;
+    padding-right: 88px;
+}
+
+.left-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+    margin: 12px 0;
+}
+
+.left-content .highlight {
+    color:var(--primary-color) ;
+    margin: 12px 0;
+}
+
+.left-content p {
+    font-size: 20px;
+    color: var(--text-color1);
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* Phần bên phải */
+.right-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.box {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.icon img {
+    width: 72px;
+    height: auto;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 16px;
+    color: var(--text-color1);
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .right-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Background Banner */
+.image-container-home {
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+.image-container-home .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container-home .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    text-align: center;
+    color: var(--text-color2);
+}
+
+.image-container-home .content h1 {
+    margin-bottom: 10px;
+}
+
+.image-container-home .content p {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: var(--text-color2);
+}
+
+.image-container-home .content button {
+    margin-top: 1%;
+    width: 228px;
+    height: 58px;
+    font-size: 20px;
+    font-weight: 300;
+    background: var(--gradient-color);
+    border-radius: 48px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.image-container-home .content button:hover {
+    background: var(--gradient-color-hover)
+}
+
+.image-container-home .overlay-img1 {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(100%, -180%);
+    top: 50%;
+    left: 20px;
+}
+
+.image-container-home .overlay-img2 {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(800%, 120%);
+    top: 50%;
+    left: 20px;
+}
+
+/* Cotainer2-Home */
+.grid-container2-home{
+    padding: 100px 104px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+.grid-container2-home .content {
+    margin-top: 48px;
+    flex-direction: column;
+    width: 80%;
+} 
+
+/* Cotainer3-Home */
+.grid-container3-home{
+    padding: 100px 104px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+.grid-container3-home .content {
+    margin-top: 48px;
+    flex-direction: column;
+    width: 80%;
+}
+
+/* Cotainer4-Home */
+.grid-container4-home{
+    padding: 100px 104px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+.grid-container4-home .content {
+    margin-top: 48px;
+    flex-direction: column;
+    width: 90%;
+}
+
+/* Cotainer5-Home */
+.grid-container5-home{
+    padding: 100px 104px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+.grid-container5-home .content {
+    margin-top: 48px;
+    flex-direction: column;
+    width: 95%;
+}
+
+/* Cotainer6-Home */
+.grid-container6-home {
+    background-image: url("https://bettamax.com/wp-content/uploads/2024/10/blonde-influencer-recording-fashion-video-scaled.webp");
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-bottom: 0; /* Xóa margin để sóng khớp */
+    padding-top: 50px;
+    position: relative;
+    overflow: hidden; /* Giữ nội dung trong vùng ảnh */
+}
+
+.grid-container6-home .content {
+    margin-left: 100px;
+}
+
+.grid-container6-home .content h1 {
+    color: white;
+}
+
+.grid-container6-home .content p {
+    color: white;
+}
+
+.grid-container6-home .content button {
+    margin-top: 1%;
+    width: 228px;
+    height: 58px;
+    font-size: 20px;
+    font-weight: 300;
+    background: var(--gradient-color);
+    border-radius: 48px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.wave-container {
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Footer Home*/
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    padding-top: 50px;
+    background-color: #292929;
+    color: white;
+    height: 440px;
+    padding: 72px;
+    flex-direction: row;
+}
+
+
+.logo_img {
+    height: 44px;
+    margin-bottom: 16px;
+}
+
+.logo_footer p {
+    margin: 16px 0;
+    margin-bottom: 36px;
+
+}
+
+.logo_footer h5 {
+    align-self: end;
+}
+
+.footer .footer_link ul {
+    list-style-type: none;
+  
+}
+
+.footer .footer_link ul li {
+    margin-right: 16px;
+}
+
+.footer .footer_link ul li a {
+    color: var(--text-color2);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer .footer_link ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+
