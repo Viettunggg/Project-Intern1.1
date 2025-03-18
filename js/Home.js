@@ -19,3 +19,4 @@ function togglePassword(inputId, icon) {
     icon.textContent = "🙈"; // Ẩn mật khẩu
   }
 }
+
